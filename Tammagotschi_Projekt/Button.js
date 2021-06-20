@@ -5,7 +5,6 @@ export default class Button {
     this.width = width;
     this.height = height;
     this.text = text;
-    this.point = point;
   }
 
   display() {
@@ -27,7 +26,7 @@ export default class Button {
     ) {
       // fill("white");
       // this.state = "clicked";
-      this.point++;
+      // this.point++;
       return true;
     } else {
       return false;

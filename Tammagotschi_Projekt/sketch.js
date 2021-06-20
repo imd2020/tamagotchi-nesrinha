@@ -6,6 +6,7 @@ let banana = loadImage("./banana.png");
 let chili = loadImage("./chili.png");
 let smoke = loadImage("./smoke.png");
 let bananaBubble = loadImage("./bananaBubble.png");
+let workschild = loadImage("./workschild.png");
 
 let bobby = new Bobby(100, 100, 100);
 // let bobbyfriend= new Bobby (200,100,100);
@@ -19,39 +20,44 @@ let teddypoint = new Score();
 function draw() {
   clear();
   bobby.display();
-  // bobbyfriend.display();
   buttonBanana.display();
   buttonPlay.display();
   buttonSleep.display();
   buttonChili.display();
   buttonWork.display();
-  buttonBanana.point = 0;
-  console.log(buttonBanana.point);
   bobby.chiliMouth = bobby.chiliMouth + bobby.chiliSpeed;
+  bobby.sleepMouth = bobby.sleepMouth + bobby.sleepSpeed;
 
   if (bobby.chiliMouth === 20 || bobby.chiliMouth === 10) {
     bobby.chiliSpeed = bobby.chiliSpeed * -1;
+  }
+
+  if (bobby.sleepMouth === 20 || bobby.sleepMouth === 10) {
+    bobby.sleepSpeed = bobby.sleepSpeed * -1;
   }
   image(teddy, 120, 20, 26.76 * 2, 20 * 2);
   image(teddy, 195, 20, 26.76 * 2, 20 * 2);
   image(teddy, 270, 20, 26.76 * 2, 20 * 2);
   image(teddy, 345, 20, 26.76 * 2, 20 * 2);
   image(teddy, 420, 20, 26.76 * 2, 20 * 2);
-  // console.log(teddypoint.teddypoint);
+  console.log(teddypoint.teddypoint);
 }
 
 function mouseClicked() {
   if (buttonBanana.hitTest()) {
     bobby.mood = "banana";
+    teddypoint.add();
   } else if (buttonPlay.hitTest()) {
     bobby.mood = "play";
   } else if (buttonSleep.hitTest()) {
     bobby.mood = "sleep";
+    teddypoint.add();
   } else if (buttonChili.hitTest()) {
     bobby.mood = "chili";
-    // teddypoint.teddypoint--;
+    teddypoint.substract();
   } else if (buttonWork.hitTest()) {
     bobby.mood = "work";
+    teddypoint.add();
   } else {
     bobby.mood = "normal";
   }

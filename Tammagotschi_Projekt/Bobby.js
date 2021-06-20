@@ -6,6 +6,8 @@ export default class Bobby {
     this.mood = "normal";
     this.chiliMouth = 15;
     this.chiliSpeed = 1;
+    this.sleepMouth = 15;
+    this.sleepSpeed = 1;
     // this.text = "text";
   }
 
@@ -19,6 +21,7 @@ export default class Bobby {
     this.displayBanana();
     this.displaySleep();
     this.displayChili();
+    this.displayWork();
 
     pop();
   }
@@ -41,6 +44,7 @@ export default class Bobby {
       background("red");
     } else if (this.mood === "work") {
       fill(236, 212, 10);
+      background(255);
     }
     noStroke();
     ellipse();
@@ -80,7 +84,7 @@ export default class Bobby {
       let bananaSize = 20;
       let x = this.size / 7;
       let y = this.size / -7;
-      teddypoint.teddypoint++;
+
       // fill(255, 204, 0);
       // rect(x + 250, y + 225, bananaSize);
       image(banana, x + 250, y + 225, 50, 50);
@@ -98,14 +102,14 @@ export default class Bobby {
       let sleepEyes = 16;
       let x = this.size / 7;
       let y = this.size / -7;
+
       fill(236, 212, 101);
       noStroke();
       ellipse(-x + 197, y + 198, sleepEyes);
       ellipse(x + 203, y + 198, sleepEyes);
-      let openMouth = 15;
       fill(0);
       noStroke();
-      ellipse(-x + 197, y + 250, openMouth);
+      ellipse(-x + 197, y + 250, this.sleepMouth);
     }
   }
 
@@ -114,16 +118,11 @@ export default class Bobby {
       let chiliEyes = 16;
       let x = this.size / 7;
       let y = this.size / -7;
-      teddypoint.teddypoint--;
+
       fill("red");
       noStroke();
       ellipse(-x + 197, y + 200, chiliEyes);
       ellipse(x + 203, y + 200, chiliEyes);
-      // let chiliMouth_2 = 25;
-      // fill(128);
-      // noStroke();
-      // ellipse(-x + 214, y + 245, chiliMouth_2);
-      // let chiliMouth = 15;
       fill("red");
       noStroke();
       ellipse(-x + 214, y + 245, this.chiliMouth);
@@ -138,6 +137,15 @@ export default class Bobby {
       ellipse(x_Smoke + 190, y_Smoke + 145, smokeSize);
       image(chili, x + 250, y + 225, 50, 50);
       image(smoke, x + 78, y - 24, 200, 200);
+    }
+  }
+
+  displayWork() {
+    if (this.mood === "work") {
+      let x = this.size / 7;
+      let y = this.size / -7;
+
+      image(workschild, x + 75, y - 50, 400, 450);
     }
   }
 }
