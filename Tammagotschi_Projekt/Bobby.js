@@ -84,9 +84,6 @@ export default class Bobby {
       let bananaSize = 20;
       let x = this.size / 7;
       let y = this.size / -7;
-
-      // fill(255, 204, 0);
-      // rect(x + 250, y + 225, bananaSize);
       image(banana, x + 250, y + 225, 50, 50);
       image(bananaBubble, x - 70, y + 75, 225, 150);
       fill(0);
@@ -94,7 +91,6 @@ export default class Bobby {
       circle(x + 185, y + 237, smileMouth);
       fill(236, 212, 101);
       circle(x + 185, y + 233, smileMouth);
-      //Sprechblase einbauen, in der Minion "Banana, Banana" sagt//
     }
   }
   displaySleep() {
@@ -110,6 +106,7 @@ export default class Bobby {
       fill(0);
       noStroke();
       ellipse(-x + 197, y + 250, this.sleepMouth);
+      image(sleepyhead, x + 80, y + 77, 150, 150);
     }
   }
 
@@ -145,7 +142,7 @@ export default class Bobby {
       let x = this.size / 7;
       let y = this.size / -7;
 
-      image(workschild, x + 75, y - 50, 400, 450);
+      image(workschild, x + 125, y - 50, 300, 350);
     }
   }
 }

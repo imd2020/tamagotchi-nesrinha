@@ -7,6 +7,7 @@ let chili = loadImage("./chili.png");
 let smoke = loadImage("./smoke.png");
 let bananaBubble = loadImage("./bananaBubble.png");
 let workschild = loadImage("./workschild.png");
+let sleepyhead = loadImage("./sleepyhead.png");
 
 let bobby = new Bobby(100, 100, 100);
 // let bobbyfriend= new Bobby (200,100,100);
