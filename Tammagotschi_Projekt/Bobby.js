@@ -19,7 +19,6 @@ export default class Bobby {
     this.displayBanana();
     this.displaySleep();
     this.displayChili();
-    this.displayNormal();
 
     pop();
   }
@@ -40,6 +39,8 @@ export default class Bobby {
     } else if (this.mood === "chili") {
       fill(236, 212, 101);
       background("red");
+    } else if (this.mood === "work") {
+      fill(236, 212, 10);
     }
     noStroke();
     ellipse();
@@ -73,17 +74,17 @@ export default class Bobby {
 
   drawMouth() {
     let x = this.size / 7;
-    // fill(255);
-    // line(-x + 100, 20, x, 20);
   }
   displayBanana() {
     if (this.mood === "banana") {
       let bananaSize = 20;
       let x = this.size / 7;
       let y = this.size / -7;
+      teddypoint.teddypoint++;
       // fill(255, 204, 0);
       // rect(x + 250, y + 225, bananaSize);
       image(banana, x + 250, y + 225, 50, 50);
+      image(bananaBubble, x - 70, y + 75, 225, 150);
       fill(0);
       let smileMouth = 25;
       circle(x + 185, y + 237, smileMouth);
@@ -113,12 +114,12 @@ export default class Bobby {
       let chiliEyes = 16;
       let x = this.size / 7;
       let y = this.size / -7;
+      teddypoint.teddypoint--;
       fill("red");
       noStroke();
       ellipse(-x + 197, y + 200, chiliEyes);
       ellipse(x + 203, y + 200, chiliEyes);
       // let chiliMouth_2 = 25;
-      //Hier würde ich gerne eine Animation einbauen, die den Mund größer/kleiner macht- scharfe Chili/
       // fill(128);
       // noStroke();
       // ellipse(-x + 214, y + 245, chiliMouth_2);
@@ -136,16 +137,7 @@ export default class Bobby {
       ellipse(x_Smoke + 190, y_Smoke + 150, smokeSize);
       ellipse(x_Smoke + 190, y_Smoke + 145, smokeSize);
       image(chili, x + 250, y + 225, 50, 50);
-    }
-  }
-  displayNormal() {
-    if (this.mood === "normal") {
-      let normalMouth = 12;
-      let x = this.size / 7;
-      let y = this.size / -7;
-      noStroke();
-      fill(0);
-      ellipse(x + 185, y + 245, normalMouth);
+      image(smoke, x + 78, y - 24, 200, 200);
     }
   }
 }
