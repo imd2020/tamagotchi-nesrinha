@@ -5,13 +5,17 @@ export default class Startscreen extends Button {
     super(x, y, width, height);
   }
   display() {
-    background(128, 128, 128);
+    background(128);
+    fill(255);
+    textSize(50);
+    text("BOBBYGOTSCHI", 130, 100);
+
     let buttonStart = new Button(
       this.x,
       this.y,
       this.width,
       this.height,
-      "Start"
+      "LETS GO"
     );
     buttonStart.display();
   }

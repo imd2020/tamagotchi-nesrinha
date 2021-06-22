@@ -16,7 +16,8 @@ export default class Button {
     noStroke();
     textSize(16);
     fill("black");
-    text(`${this.text} `, 0, 0);
+    textAlign(CENTER);
+    text(`${this.text} `, this.width / 2 - 10, 0);
     pop();
   }
 

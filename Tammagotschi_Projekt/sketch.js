@@ -11,6 +11,7 @@ let chiliBubble = loadImage("./chiliBubble.png");
 let workschild = loadImage("./workschild.png");
 let sleepyhead = loadImage("./sleepyhead.png");
 let hut = loadImage("./hut.png");
+let bobbyStart = loadImage("./bobbyStart.png");
 
 let status = 0;
 
@@ -20,13 +21,16 @@ let buttonPlay = new Button(275, 540, 100, 40, "PLAY🧸");
 let buttonSleep = new Button(275, 590, 100, 40, "SLEEP💤");
 let buttonChili = new Button(100, 540, 100, 40, "CHILI🌶");
 let buttonWork = new Button(450, 540, 100, 40, "WORK💪🏽");
+let buttonMenue = new Button(450, 590, 100, 40, "MENÜ🏠");
 let teddypoint = new Score();
-let menuscreen = new Startscreen(300, 500, 100, 40);
+let menuscreen = new Startscreen(225, 500, 200, 80);
 
 function draw() {
   clear();
+
   if (status === 0) {
     menuscreen.display();
+    image(bobbyStart, 170, 200, 13.55 * 20, 18.25 * 20);
   } else if (status === 1) {
     bobby.display();
     buttonBanana.display();
@@ -34,6 +38,7 @@ function draw() {
     buttonSleep.display();
     buttonChili.display();
     buttonWork.display();
+    buttonMenue.display();
     bobby.chiliMouth = bobby.chiliMouth + bobby.chiliSpeed;
     bobby.sleepMouth = bobby.sleepMouth + bobby.sleepSpeed;
 
@@ -52,6 +57,9 @@ function draw() {
     console.log(teddypoint.teddypoint);
   } else if (status === 2) {
     background(0);
+  }
+  if (teddypoint.teddypoint === 5) {
+    status = 2;
   }
 }
 

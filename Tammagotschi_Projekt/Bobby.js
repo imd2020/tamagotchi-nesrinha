@@ -157,6 +157,7 @@ export default class Bobby {
       image(workschild, x + 200, y, 250, 300);
       image(hut, x + 150, y + 50, 200, 250);
       image(hut, x + 350, y + 70, 100, 150);
+      // image(bobbyStart, x, y, 200, 200);
     }
   }
 }
