@@ -8,7 +8,7 @@ export default class Startscreen extends Button {
     background(128);
     fill(255);
     textSize(50);
-    text("BOBBYGOTSCHI", 130, 100);
+    text("BOBBYGOTSCHI", 130, 175);
 
     let buttonStart = new Button(
       this.x,

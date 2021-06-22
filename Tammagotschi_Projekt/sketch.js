@@ -23,7 +23,7 @@ let buttonChili = new Button(100, 540, 100, 40, "CHILI🌶");
 let buttonWork = new Button(450, 540, 100, 40, "WORK💪🏽");
 let buttonMenue = new Button(450, 590, 100, 40, "MENÜ🏠");
 let teddypoint = new Score();
-let menuscreen = new Startscreen(225, 500, 200, 80);
+let menuscreen = new Startscreen(225, 500, 200, 40);
 
 function draw() {
   clear();
@@ -31,6 +31,12 @@ function draw() {
   if (status === 0) {
     menuscreen.display();
     image(bobbyStart, 170, 200, 13.55 * 20, 18.25 * 20);
+    image(banana, 520, 140, 50, 50);
+    image(sleepyhead, 92, 94, 75, 75);
+    image(teddy, 395, 182, 26.76 * 2, 20 * 2);
+    image(hut, 350, 368, 100, 150);
+    image(hut, 100, 368, 100, 150);
+    image(chili, 275, 120, 25, 25);
   } else if (status === 1) {
     bobby.display();
     buttonBanana.display();
@@ -57,9 +63,31 @@ function draw() {
     console.log(teddypoint.teddypoint);
   } else if (status === 2) {
     background(0);
+    fill(255);
+    textSize(20);
+    text(
+      "Yeey, Bobby hat sich gut entwickelt und bekommt vom Superschurken ein Teddybär als Lob. Mach weiter so!",
+      75,
+      300,
+      500,
+      500
+    );
+  } else if (status === 3) {
+    background(0);
+    fill(255);
+    textSize(20);
+    text(
+      "Nooo, Bobby hat sich zu sehr abgelenkt und ist noch nicht bereit, dem Superschurken zu dienen...",
+      75,
+      300,
+      500,
+      500
+    );
   }
   if (teddypoint.teddypoint === 5) {
     status = 2;
+  } else if (teddypoint.teddypoint === -2) {
+    status = 3;
   }
 }
 
