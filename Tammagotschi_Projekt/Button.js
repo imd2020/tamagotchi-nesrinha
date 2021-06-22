@@ -10,6 +10,9 @@ export default class Button {
   display() {
     push();
     translate(this.x, this.y);
+    stroke(236, 212, 101);
+    strokeWeight(4);
+    rect(-15, -25, this.width, this.height, 10);
     noStroke();
     textSize(16);
     fill("black");

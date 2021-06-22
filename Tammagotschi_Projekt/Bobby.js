@@ -44,7 +44,7 @@ export default class Bobby {
       background("red");
     } else if (this.mood === "work") {
       fill(236, 212, 10);
-      background(255);
+      background(221, 218, 217);
     }
     noStroke();
     ellipse();
@@ -67,13 +67,23 @@ export default class Bobby {
 
   displayEyes() {
     noStroke();
-    let eyeSize = 16;
+    let eyeSize = 24;
+    let eyeSize2 = 11;
+    let eyeSize3 = 2;
     let x = this.size / 7;
     let y = this.size / -7;
-    fill(77, 40, 0);
+    fill(115, 51, 21);
     noStroke();
     ellipse(-x + 197, y + 200, eyeSize);
     ellipse(x + 203, y + 200, eyeSize);
+    fill(0);
+    noStroke();
+    ellipse(-x + 197, y + 200, eyeSize2);
+    ellipse(x + 203, y + 200, eyeSize2);
+    fill(255);
+    noStroke();
+    ellipse(-x + 194, y + 197, eyeSize3);
+    ellipse(x + 200, y + 197, eyeSize3);
   }
 
   drawMouth() {
@@ -84,8 +94,9 @@ export default class Bobby {
       let bananaSize = 20;
       let x = this.size / 7;
       let y = this.size / -7;
-      image(banana, x + 250, y + 225, 50, 50);
+
       image(bananaBubble, x - 70, y + 75, 225, 150);
+      image(banana, x + 90, y + 125, 50, 50);
       fill(0);
       let smileMouth = 25;
       circle(x + 185, y + 237, smileMouth);
@@ -95,7 +106,7 @@ export default class Bobby {
   }
   displaySleep() {
     if (this.mood === "sleep") {
-      let sleepEyes = 16;
+      let sleepEyes = 22;
       let x = this.size / 7;
       let y = this.size / -7;
 
@@ -132,8 +143,9 @@ export default class Bobby {
       ellipse(x_Smoke + 210, y_Smoke + 156, smokeSize);
       ellipse(x_Smoke + 190, y_Smoke + 150, smokeSize);
       ellipse(x_Smoke + 190, y_Smoke + 145, smokeSize);
-      image(chili, x + 250, y + 225, 50, 50);
       image(smoke, x + 78, y - 24, 200, 200);
+      image(chiliBubble, x + 230, y + 100, 225, 150);
+      image(chili, x + 390, y + 150, 50, 50);
     }
   }
 
@@ -142,7 +154,9 @@ export default class Bobby {
       let x = this.size / 7;
       let y = this.size / -7;
 
-      image(workschild, x + 125, y - 50, 300, 350);
+      image(workschild, x + 200, y, 250, 300);
+      image(hut, x + 150, y + 50, 200, 250);
+      image(hut, x + 350, y + 70, 100, 150);
     }
   }
 }
