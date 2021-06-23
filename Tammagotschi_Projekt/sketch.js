@@ -32,11 +32,12 @@ function draw() {
     menuscreen.display();
     image(bobbyStart, 170, 200, 13.55 * 20, 18.25 * 20);
     image(banana, 520, 140, 50, 50);
-    image(sleepyhead, 92, 94, 75, 75);
+    image(sleepyhead, 110, 110, 50, 50);
     image(teddy, 395, 182, 26.76 * 2, 20 * 2);
     image(hut, 350, 368, 100, 150);
     image(hut, 100, 368, 100, 150);
     image(chili, 275, 120, 25, 25);
+    teddypoint.teddypoint = 0;
   } else if (status === 1) {
     bobby.display();
     buttonBanana.display();
@@ -44,7 +45,6 @@ function draw() {
     buttonSleep.display();
     buttonChili.display();
     buttonWork.display();
-    buttonMenue.display();
     bobby.chiliMouth = bobby.chiliMouth + bobby.chiliSpeed;
     bobby.sleepMouth = bobby.sleepMouth + bobby.sleepSpeed;
 
@@ -60,13 +60,13 @@ function draw() {
     image(teddy, 270, 20, 26.76 * 2, 20 * 2);
     image(teddy, 345, 20, 26.76 * 2, 20 * 2);
     image(teddy, 420, 20, 26.76 * 2, 20 * 2);
-    console.log(teddypoint.teddypoint);
   } else if (status === 2) {
     background(0);
+    buttonMenue.display();
     fill(255);
     textSize(20);
     text(
-      "Yeey, Bobby hat sich gut entwickelt und bekommt vom Superschurken ein Teddybär als Lob. Mach weiter so!",
+      "Yeey, Bobby hat sich gut entwickelt und ist bereit dem Superschurken zu dienen. Bobby bekommt vom Superschurken ein Teddybär als Lob. Mach weiter so!",
       75,
       300,
       500,
@@ -74,6 +74,7 @@ function draw() {
     );
   } else if (status === 3) {
     background(0);
+    buttonMenue.display();
     fill(255);
     textSize(20);
     text(
@@ -110,11 +111,14 @@ function mouseClicked() {
     } else {
       bobby.mood = "normal";
     }
-    console.log(bobby.mood);
+    // console.log(bobby.mood);
   }
   if (status === 0) {
     if (menuscreen.hitTest()) {
       status = 1;
     }
+  }
+  if (buttonMenue.hitTest()) {
+    status = 0;
   }
 }
