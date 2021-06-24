@@ -8,7 +8,6 @@ export default class Bobby {
     this.chiliSpeed = 1;
     this.sleepMouth = 15;
     this.sleepSpeed = 1;
-    // this.text = "text";
   }
 
   display() {
@@ -22,6 +21,7 @@ export default class Bobby {
     this.displaySleep();
     this.displayChili();
     this.displayWork();
+    this.displayPlay();
 
     pop();
   }
@@ -36,7 +36,7 @@ export default class Bobby {
       background(255, 235, 153);
     } else if (this.mood === "play") {
       fill(236, 212, 101);
-      background("green");
+      background(255, 230, 230);
     } else if (this.mood === "sleep") {
       fill(236, 212, 101);
       background(0, 0, 128);
@@ -90,7 +90,7 @@ export default class Bobby {
   drawMouth() {
     let x = this.size / 7;
   }
-  //Bobby Banana
+  //Bobbyscreen_Banana
   displayBanana() {
     if (this.mood === "banana") {
       let bananaSize = 20;
@@ -106,7 +106,7 @@ export default class Bobby {
       circle(x + 185, y + 233, smileMouth);
     }
   }
-  //Bobby Sleep
+  //Bobbyscreen_Sleep
   displaySleep() {
     if (this.mood === "sleep") {
       let sleepEyes = 22;
@@ -125,7 +125,7 @@ export default class Bobby {
     }
   }
 
-  // Bobby Chili
+  // Bobbyscreen_Chili
   displayChili() {
     if (this.mood === "chili") {
       let chiliEyes = 16;
@@ -154,7 +154,7 @@ export default class Bobby {
     }
   }
 
-  //Bobby Work
+  //Bobby_Work
   displayWork() {
     if (this.mood === "work") {
       let x = this.size / 7;
@@ -164,6 +164,23 @@ export default class Bobby {
       image(hut, x + 150, y + 50, 200, 250);
       image(hut, x + 350, y + 70, 100, 150);
       image(workBubble, x - 30, y + 120, 175, 100);
+    }
+  }
+
+  //Bobby_Play
+  displayPlay() {
+    if (this.mood === "play") {
+      let x = this.size / 7;
+      let y = this.size / -7;
+      image(playBubble, x - 30, y + 120, 175, 100);
+
+      fill(0);
+      let smileMouth = 25;
+      circle(x + 185, y + 237, smileMouth);
+      fill(236, 212, 101);
+      circle(x + 185, y + 233, smileMouth);
+      fill(255, 153, 153);
+      ellipse(x + 185, y + 253, 10, 15);
     }
   }
 }

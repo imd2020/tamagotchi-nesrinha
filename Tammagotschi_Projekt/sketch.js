@@ -18,8 +18,9 @@ let bobbyStart = loadImage("./bobbyStart.png");
 let sleepBubble = loadImage("./sleepBubble.png");
 let workBubble = loadImage("./workBubble.png");
 let bobbySad = loadImage("./bobbySad.png");
+let playBubble = loadImage("./playBubble.png");
 
-//Animation
+//animation
 const bobbyPos = {
   y: 600,
   scale: 0.1,
@@ -35,18 +36,18 @@ gsap.to(bobbyPos, {
   },
 });
 
-//Startscreen
+//startscreen
 let status = 0;
-
 let bobby = new Bobby(100, 100, 100);
 let buttonBanana = new Button(100, 620, 100, 40, "BANANA🍌");
-let buttonPlay = new Button(275, 540, 100, 40, "PLAY🧸");
+let buttonPlay = new Button(275, 540, 100, 40, "PLAY😛");
 let buttonSleep = new Button(275, 620, 100, 40, "SLEEP💤");
 let buttonChili = new Button(100, 540, 100, 40, "CHILI🌶");
 let buttonWork = new Button(450, 540, 100, 40, "WORK💪🏽");
 let buttonMenue = new Button(450, 620, 100, 40, "MENÜ🏠");
 let teddypoint = new Score();
-let menuscreen = new Startscreen(245, 600, 200, 40);
+let menuscreen = new Startscreen(240, 600, 200, 40);
+
 function draw() {
   clear();
 
@@ -63,8 +64,8 @@ function draw() {
     image(banana, 505, 40, 50, 50);
     image(sleepyhead, 95, 10, 50, 50);
     image(teddy, 440, 190, 26.76 * 2, 20 * 2);
-    image(hut, 370, 468, 100, 150);
-    image(hut, 120, 468, 100, 150);
+    image(hut, 400, 468, 100, 150);
+    image(hut, 90, 468, 100, 150);
     image(chili, 260, 20, 25, 25);
     teddypoint.teddypoint = 0;
     bobby.mood = "normal";
@@ -90,10 +91,12 @@ function draw() {
 
     //Endscreen Win
   } else if (status === 2) {
+    noStroke();
     background(128);
     buttonMenue.display();
     fill(255);
     textSize(20);
+
     text(
       "Yeey, Bobby hat sich gut entwickelt und ist bereit dem Superschurken zu dienen. Bobby bekommt vom Superschurken ein Teddybär als Lob. Mach weiter so!👏🏻",
       75,
@@ -105,6 +108,7 @@ function draw() {
   }
   //endScreen Lose
   else if (status === 3) {
+    noStroke();
     background(128);
     image(bobbySad, 175, 375, 13.96 * 20, 18.25 * 20);
     buttonMenue.display();
@@ -118,7 +122,7 @@ function draw() {
       500
     );
   }
-  //Score
+  //score
 
   if (teddypoint.teddypoint === 5) {
     status = 2;
@@ -129,9 +133,10 @@ function draw() {
     image(teddy, 60 * i + 150, 30, 26.76 * 2, 20 * 2);
   }
 
+  //frame
   noFill();
   strokeWeight(10);
-  stroke(0);
+  stroke(236, 212, 101);
   rect(0, 0, 650, 675);
 }
 
@@ -142,6 +147,7 @@ function mouseClicked() {
       teddypoint.add();
     } else if (buttonPlay.hitTest()) {
       bobby.mood = "play";
+      teddypoint.substract();
     } else if (buttonSleep.hitTest()) {
       bobby.mood = "sleep";
       teddypoint.add();

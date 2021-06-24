@@ -28,9 +28,6 @@ gsap.to(bobbyPos, {
   y: 200,
   scale: 0.5,
   onComplete: () => {
-    console.log("LetsStart");
-    // textSize(10);
-    // fill(255);
-    // text("yeeey", 300, 300);
+    // console.log("LetsStart");
   },
 });

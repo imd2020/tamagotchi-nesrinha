@@ -17,13 +17,14 @@ export default class Button {
       mouseY > this.y &&
       mouseY < this.y + this.height
     ) {
-      this.s = 1.2;
+      this.s = 1.05;
     } else {
       this.s = 1;
     }
     scale(this.s);
     stroke(236, 212, 101);
     strokeWeight(4);
+    fill(255);
     rect(-15, -25, this.width, this.height, 10);
     noStroke();
     textSize(16);

@@ -14,6 +14,7 @@ export default class Startscreen extends Button {
     textSize(15);
     fill(0);
     noStroke();
+    //Tutorial
     text(
       "Hello and Welcome to Bobbygotschi! Finde durch Klicken der Optionen heraus, was Bobby braucht und machen muss, um sich zu einem guten Minion zu entwickeln. Viel Erfolg!",
       110,
