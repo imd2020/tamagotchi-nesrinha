@@ -6,10 +6,22 @@ export default class Startscreen extends Button {
   }
   display() {
     background(128);
-    fill(255);
+    fill(236, 212, 101);
     textSize(50);
-    text("BOBBYGOTSCHI", 130, 175);
-
+    strokeWeight(2);
+    stroke(255);
+    text("BOBBYGOTSCHI", 115, 75);
+    textSize(15);
+    fill(0);
+    noStroke();
+    text(
+      "Hello and Welcome to Bobbygotschi! Finde durch Klicken der Optionen heraus, was Bobby braucht und machen muss, um sich zu einem guten Minion zu entwickeln. Viel Erfolg!",
+      110,
+      150,
+      450,
+      500
+    );
+    fill(255);
     let buttonStart = new Button(
       this.x,
       this.y,

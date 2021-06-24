@@ -26,6 +26,7 @@ export default class Bobby {
     pop();
   }
 
+  //Bobby Body
   displayBody() {
     if (this.mood === "normal") {
       fill(236, 212, 101);
@@ -50,7 +51,7 @@ export default class Bobby {
     ellipse();
     ellipse(200, 200, this.size + 5);
   }
-
+  //Bobby Glas
   displayGlas() {
     let glasSize = 34;
     let glasSize2 = 50;
@@ -64,7 +65,7 @@ export default class Bobby {
     ellipse(-x + 195, y + 200, glasSize);
     ellipse(x + 205, y + 200, glasSize);
   }
-
+  //Bobby Eyes
   displayEyes() {
     noStroke();
     let eyeSize = 24;
@@ -85,18 +86,19 @@ export default class Bobby {
     ellipse(-x + 194, y + 197, eyeSize3);
     ellipse(x + 200, y + 197, eyeSize3);
   }
-
+  //Bobby Mouth
   drawMouth() {
     let x = this.size / 7;
   }
+  //Bobby Banana
   displayBanana() {
     if (this.mood === "banana") {
       let bananaSize = 20;
       let x = this.size / 7;
       let y = this.size / -7;
 
-      image(bananaBubble, x - 70, y + 75, 225, 150);
-      image(banana, x + 90, y + 125, 50, 50);
+      image(bananaBubble, x - 30, y + 120, 175, 100);
+      image(banana, x + 80, y + 150, 50, 50);
       fill(0);
       let smileMouth = 25;
       circle(x + 185, y + 237, smileMouth);
@@ -104,6 +106,7 @@ export default class Bobby {
       circle(x + 185, y + 233, smileMouth);
     }
   }
+  //Bobby Sleep
   displaySleep() {
     if (this.mood === "sleep") {
       let sleepEyes = 22;
@@ -118,9 +121,11 @@ export default class Bobby {
       noStroke();
       ellipse(-x + 197, y + 250, this.sleepMouth);
       image(sleepyhead, x + 80, y + 77, 150, 150);
+      image(sleepBubble, x + 240, y + 120, 175, 100);
     }
   }
 
+  // Bobby Chili
   displayChili() {
     if (this.mood === "chili") {
       let chiliEyes = 16;
@@ -144,11 +149,12 @@ export default class Bobby {
       ellipse(x_Smoke + 190, y_Smoke + 150, smokeSize);
       ellipse(x_Smoke + 190, y_Smoke + 145, smokeSize);
       image(smoke, x + 78, y - 24, 200, 200);
-      image(chiliBubble, x + 230, y + 100, 225, 150);
-      image(chili, x + 390, y + 150, 50, 50);
+      image(chiliBubble, x + 240, y + 120, 175, 100);
+      image(chili, x + 355, y + 150, 50, 50);
     }
   }
 
+  //Bobby Work
   displayWork() {
     if (this.mood === "work") {
       let x = this.size / 7;
@@ -157,7 +163,7 @@ export default class Bobby {
       image(workschild, x + 200, y, 250, 300);
       image(hut, x + 150, y + 50, 200, 250);
       image(hut, x + 350, y + 70, 100, 150);
-      // image(bobbyStart, x, y, 200, 200);
+      image(workBubble, x - 30, y + 120, 175, 100);
     }
   }
 }
