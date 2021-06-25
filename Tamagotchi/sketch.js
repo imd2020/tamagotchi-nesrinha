@@ -2,23 +2,22 @@ import Bobby from "./bobby.js";
 import Button from "./button.js";
 import Score from "./score.js";
 import Startscreen from "./startscreen.js";
-import gsap from "./gsap.min.js";
-
-// PNG Picture
-let teddy = loadImage("./teddy.png");
-let banana = loadImage("./banana.png");
-let chili = loadImage("./chili.png");
-let smoke = loadImage("./smoke.png");
-let bananaBubble = loadImage("./bananaBubble.png");
-let chiliBubble = loadImage("./chiliBubble.png");
-let workschild = loadImage("./workschild.png");
-let sleepyhead = loadImage("./sleepyhead.png");
-let hut = loadImage("./hut.png");
-let bobbyStart = loadImage("./bobbyStart.png");
-let sleepBubble = loadImage("./sleepBubble.png");
-let workBubble = loadImage("./workBubble.png");
-let bobbySad = loadImage("./bobbySad.png");
-let playBubble = loadImage("./playBubble.png");
+import {
+  teddy,
+  banana,
+  chili,
+  smoke,
+  bananaBubble,
+  chiliBubble,
+  workschild,
+  sleepyhead,
+  hut,
+  bobbyStart,
+  sleepBubble,
+  workBubble,
+  bobbySad,
+  playBubble,
+} from "./p5setup.js";
 
 //animation
 const bobbyPos = {
@@ -32,7 +31,7 @@ gsap.to(bobbyPos, {
   y: 210,
   scale: 1,
   onComplete: () => {
-    console.log("LetsStart");
+    // console.log("LetsStart");
   },
 });
 
@@ -62,11 +61,11 @@ function draw() {
       18.25 * 20 * bobbyPos.scale
     );
     image(banana, 505, 40, 50, 50);
-    image(sleepyhead, 95, 10, 50, 50);
+    image(sleepyhead, 120, 10, 50, 50);
     image(teddy, 440, 190, 26.76 * 2, 20 * 2);
     image(hut, 400, 468, 100, 150);
     image(hut, 90, 468, 100, 150);
-    image(chili, 260, 20, 25, 25);
+    image(chili, 285, 20, 25, 25);
     teddypoint.teddypoint = 0;
     bobby.mood = "normal";
   } //mainScreen
@@ -140,6 +139,8 @@ function draw() {
   rect(0, 0, 650, 675);
 }
 
+window.draw = draw;
+
 function mouseClicked() {
   if (status === 1) {
     if (buttonBanana.hitTest()) {
@@ -173,3 +174,4 @@ function mouseClicked() {
     status = 0;
   }
 }
+window.mouseClicked = mouseClicked;

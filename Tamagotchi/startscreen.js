@@ -1,5 +1,4 @@
 import Button from "./button.js";
-
 export default class Startscreen extends Button {
   constructor(x, y, width, height) {
     super(x, y, width, height);
@@ -10,13 +9,13 @@ export default class Startscreen extends Button {
     textSize(50);
     strokeWeight(2);
     stroke(255);
-    text("BOBBYGOTSCHI", 115, 75);
+    text("BOBBYGOTCHI", 140, 75);
     textSize(15);
     fill(0);
     noStroke();
     //Tutorial
     text(
-      "Hello and Welcome to Bobbygotschi! Finde durch Klicken der Optionen heraus, was Bobby braucht und machen muss, um sich zu einem guten Minion zu entwickeln. Viel Erfolg!",
+      "Hello and Welcome to Bobbygotchi! Finde durch Klicken der Optionen heraus, was Bobby braucht und machen muss, um sich zu einem guten Minion zu entwickeln. Viel Erfolg!",
       110,
       150,
       450,
@@ -39,10 +38,10 @@ export default class Startscreen extends Button {
       mouseY >= this.y - this.height / 2 &&
       mouseY <= this.y - this.height / 2 + this.height
     ) {
-      console.log("hitTestfunktioniert");
+      // console.log("hitTestfunktioniert");
       return true;
     } else {
-      console.log("hitTestfunktioniertnicht");
+      // console.log("hitTestfunktioniertnicht");
       return false;
     }
   }

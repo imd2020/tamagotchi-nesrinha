@@ -1,3 +1,19 @@
+import {
+  teddy,
+  banana,
+  chili,
+  smoke,
+  bananaBubble,
+  chiliBubble,
+  workschild,
+  sleepyhead,
+  hut,
+  bobbyStart,
+  sleepBubble,
+  workBubble,
+  bobbySad,
+  playBubble,
+} from "./p5setup.js";
 export default class Bobby {
   constructor(x, y, size, text) {
     this.x = x;
@@ -100,7 +116,7 @@ export default class Bobby {
       image(bananaBubble, x - 30, y + 120, 175, 100);
       image(banana, x + 80, y + 150, 50, 50);
       fill(0);
-      let smileMouth = 25;
+      let smileMouth = 10;
       circle(x + 185, y + 237, smileMouth);
       fill(236, 212, 101);
       circle(x + 185, y + 233, smileMouth);
@@ -175,12 +191,16 @@ export default class Bobby {
       image(playBubble, x - 30, y + 120, 175, 100);
 
       fill(0);
-      let smileMouth = 25;
+      let smileMouth = 10;
       circle(x + 185, y + 237, smileMouth);
       fill(236, 212, 101);
       circle(x + 185, y + 233, smileMouth);
       fill(255, 153, 153);
       ellipse(x + 185, y + 253, 10, 15);
+      fill(236, 212, 101);
+      textFont("Myriad Pro");
+      textSize(50);
+      text("PARTY TIME", 75, 50);
     }
   }
 }
