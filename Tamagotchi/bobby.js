@@ -46,19 +46,23 @@ export default class Bobby {
   displayBody() {
     if (this.mood === "normal") {
       fill(236, 212, 101);
+      noStroke();
       background(128);
+      textFont("Myriad Pro");
+      textSize(50);
+      text("Give me some....", 50, 50);
     } else if (this.mood === "banana") {
       fill(236, 212, 101);
       background(255, 235, 153);
     } else if (this.mood === "play") {
       fill(236, 212, 101);
-      background(255, 230, 230);
+      background(255, 153, 153);
     } else if (this.mood === "sleep") {
       fill(236, 212, 101);
       background(0, 0, 128);
     } else if (this.mood === "chili") {
       fill(236, 212, 101);
-      background("red");
+      background(195, 70, 58);
     } else if (this.mood === "work") {
       fill(236, 212, 10);
       background(221, 218, 217);
@@ -148,11 +152,11 @@ export default class Bobby {
       let x = this.size / 7;
       let y = this.size / -7;
 
-      fill("red");
+      fill(195, 70, 58);
       noStroke();
       ellipse(-x + 197, y + 200, chiliEyes);
       ellipse(x + 203, y + 200, chiliEyes);
-      fill("red");
+      fill(195, 70, 58);
       noStroke();
       ellipse(-x + 214, y + 245, this.chiliMouth);
       fill(255);
@@ -200,7 +204,7 @@ export default class Bobby {
       fill(236, 212, 101);
       textFont("Myriad Pro");
       textSize(50);
-      text("PARTY TIME", 75, 50);
+      text("PARTY TIME", 100, 50);
     }
   }
 }

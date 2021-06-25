@@ -1,6 +1,5 @@
 function setup() {
   let canvas = createCanvas(650, 675);
-  // canvas.parent("sketch-holder");
   frameRate(30);
 }
 window.setup = setup;
@@ -56,8 +55,3 @@ export {
 };
 
 window.preload = preload;
-/*
-  new p5();
-  var width = windowWidth;
-  var height = windowHeight;
-  */

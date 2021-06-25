@@ -35,16 +35,20 @@ gsap.to(bobbyPos, {
   },
 });
 
-//startscreen
+//status
 let status = 0;
+//bobby
 let bobby = new Bobby(100, 100, 100);
+//buttons
 let buttonBanana = new Button(100, 620, 100, 40, "BANANA🍌");
 let buttonPlay = new Button(275, 540, 100, 40, "PLAY😛");
 let buttonSleep = new Button(275, 620, 100, 40, "SLEEP💤");
 let buttonChili = new Button(100, 540, 100, 40, "CHILI🌶");
 let buttonWork = new Button(450, 540, 100, 40, "WORK💪🏽");
 let buttonMenue = new Button(450, 620, 100, 40, "MENÜ🏠");
+//teddypoint
 let teddypoint = new Score();
+//startScreen
 let menuscreen = new Startscreen(240, 600, 200, 40);
 
 function draw() {
@@ -55,14 +59,14 @@ function draw() {
     menuscreen.display();
     image(
       bobbyStart,
-      205,
+      185,
       bobbyPos.y,
       13.55 * 20 * bobbyPos.scale,
       18.25 * 20 * bobbyPos.scale
     );
     image(banana, 505, 40, 50, 50);
     image(sleepyhead, 120, 10, 50, 50);
-    image(teddy, 440, 190, 26.76 * 2, 20 * 2);
+    image(teddy, 420, 190, 26.76 * 2, 20 * 2);
     image(hut, 400, 468, 100, 150);
     image(hut, 90, 468, 100, 150);
     image(chili, 285, 20, 25, 25);
@@ -89,17 +93,18 @@ function draw() {
     }
 
     //Endscreen Win
-  } else if (status === 2) {
+  } //endScreen Win
+  else if (status === 2) {
     noStroke();
     background(128);
     buttonMenue.display();
-    fill(255);
+    fill(236, 212, 101);
     textSize(20);
 
     text(
-      "Yeey, Bobby hat sich gut entwickelt und ist bereit dem Superschurken zu dienen. Bobby bekommt vom Superschurken ein Teddybär als Lob. Mach weiter so!👏🏻",
-      75,
-      275,
+      "Yeey, Bobby hat genug Teddypunkte bekommen und sich gut entwickelt. Bobby ist nun bereit dem Superschurken zu dienen. Mach weiter so!👏🏻",
+      85,
+      225,
       500,
       500
     );
@@ -111,7 +116,7 @@ function draw() {
     background(128);
     image(bobbySad, 175, 375, 13.96 * 20, 18.25 * 20);
     buttonMenue.display();
-    fill(255);
+    fill(236, 212, 101);
     textSize(20);
     text(
       "Nooo, Bobby hat sich zu sehr abgelenkt und ist noch nicht bereit, dem Superschurken zu dienen...🥺",
@@ -122,17 +127,16 @@ function draw() {
     );
   }
   //score
-
-  if (teddypoint.teddypoint === 5) {
+  if (teddypoint.teddypoint === 3) {
     status = 2;
   } else if (teddypoint.teddypoint === -2) {
     status = 3;
   }
   for (let i = 0; i < teddypoint.teddypoint; i++) {
-    image(teddy, 60 * i + 150, 30, 26.76 * 2, 20 * 2);
+    image(teddy, 75 * i + 210, 30, 26.76 * 2, 20 * 2);
   }
 
-  //frame
+  //frame (background)
   noFill();
   strokeWeight(10);
   stroke(236, 212, 101);
@@ -161,7 +165,6 @@ function mouseClicked() {
     } else {
       bobby.mood = "normal";
     }
-    // console.log(bobby.mood);
   }
   //Switch to Game
   if (status === 0) {

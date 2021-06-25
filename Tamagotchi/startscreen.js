@@ -13,11 +13,12 @@ export default class Startscreen extends Button {
     textSize(15);
     fill(0);
     noStroke();
-    //Tutorial
+    //Tutorial/Infos
+    fill(236, 212, 101);
     text(
-      "Hello and Welcome to Bobbygotchi! Finde durch Klicken der Optionen heraus, was Bobby braucht und machen muss, um sich zu einem guten Minion zu entwickeln. Viel Erfolg!",
+      "Bello to Bobbygotchi! Finde durch Klicken der Optionen heraus, was Bobby braucht und machen muss, um sich zu einem guten Minion zu entwickeln. Viel Erfolg!",
       110,
-      150,
+      120,
       450,
       500
     );
@@ -38,10 +39,8 @@ export default class Startscreen extends Button {
       mouseY >= this.y - this.height / 2 &&
       mouseY <= this.y - this.height / 2 + this.height
     ) {
-      // console.log("hitTestfunktioniert");
       return true;
     } else {
-      // console.log("hitTestfunktioniertnicht");
       return false;
     }
   }
