@@ -25,7 +25,7 @@ const bobbyPos = {
   scale: 0.1,
 };
 gsap.to(bobbyPos, {
-  duration: 3,
+  duration: 5,
   ease: "power1.out",
   repeat: 0,
   y: 210,
