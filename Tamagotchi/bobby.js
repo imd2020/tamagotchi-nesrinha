@@ -179,11 +179,17 @@ export default class Bobby {
     if (this.mood === "work") {
       let x = this.size / 7;
       let y = this.size / -7;
-
+      fill(203, 113, 61);
+      ellipse(x + 184, y + 163, 80, 20);
+      circle(x + 184, y + 140, 30);
       image(workschild, x + 200, y, 250, 300);
       image(hut, x + 150, y + 50, 200, 250);
-      image(hut, x + 350, y + 70, 100, 150);
-      image(workBubble, x - 30, y + 120, 175, 100);
+      image(workBubble, x - 60, y + 120, 175, 100);
+      fill(0);
+      let smileMouth = 10;
+      circle(x + 185, y + 237, smileMouth);
+      fill(236, 212, 101);
+      circle(x + 185, y + 233, smileMouth);
     }
   }
 
